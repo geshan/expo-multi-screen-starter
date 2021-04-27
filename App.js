@@ -63,6 +63,10 @@ class App extends React.Component {
   render() {
     const { isLoading, theme } = this.state;
     const iOSStatusType = theme === 'light' ? 'dark-content' : 'light-content';
+    let themes = ['light'];
+    if (flagsmith.hasFeature('themes')) {
+      themes = JSON.parse(flagsmith.getValue('themes'));
+    }
 
     if (isLoading) {
       return (
@@ -81,7 +85,7 @@ class App extends React.Component {
         <Stack
           screenProps={{
             updateTheme: this.updateTheme,
-            themes: JSON.parse(flagsmith.getValue('themes'))
+            themes
           }}
           theme={theme}
         />
