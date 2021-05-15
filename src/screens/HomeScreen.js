@@ -7,11 +7,6 @@ import { gStyle } from '../constants';
 // components
 import Touch from '../components/Touch';
 
-//feature flags
-import flagsmith from 'react-native-flagsmith';
-import AsyncStorage from '@react-native-community/async-storage';
-const environmentID = "nzSwVvSBKPXat8gM6guipa";
-
 const HomeScreen = ({ navigation, screenProps }) => {
 
   const theme = useTheme();
